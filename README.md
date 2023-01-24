@@ -1,6 +1,7 @@
 # Pascals triangle 
 
-## Flow chart
+Pascal’s Triangle is a system of numbers arranged in rows resembling a triangle with each row consisting of the coefficients in the expansion of (a + b)n for n = 0, 1, 2, 3. The construction of the triangular array in Pascal’s triangle is related to the binomial coefficients by Pascal’s rule. 
+# Flow chart
 ![image info](./triangle.jpg)
 
 ## Pseudocode
