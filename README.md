@@ -1,7 +1,7 @@
 # Pascals triangle 
 
 ## Flow chart
-
+![image info](./triangle.jpg)
 
 ## Pseudocode
 ```
