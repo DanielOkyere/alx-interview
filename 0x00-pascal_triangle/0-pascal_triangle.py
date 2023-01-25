@@ -1,24 +1,18 @@
 #!/usr/bin/python3
-""" Implementation of pascal Challenge"""
+"""
+Pascals Triangle 2 alternative
+"""
 
 
 def pascal_triangle(n):
-    """return list of number"""
-    if n <= 0:
-        return []
-
-    pascal_triangle = [0] * n
-
-    for i in range(n):
-        n_row = [0] * (i+1)
-        n_row[0] = 1
-        n_row[len(n_row) - 1] = 1
-
-        for j in range(1, i):
-            if j > 0 and j < len(n_row):
-                a = pascal_triangle[i - 1][j]
-                b = pascal_triangle[i - 1][j - 1]
-                n_row[j] = a + b
-        pascal_triangle[i] = n_row
-
-    return pascal_triangle
+    """
+    Returns with a list of rows for the pascal triangle
+    """
+    a = [[1]]
+    for i in range(n-1):
+        temp = [0] + a[-1] + [0]
+        row = []
+        for j in range(len(a[-1]) + 1):
+            row.append(temp[j] + temp[j+1])
+        a.append(row)
+    return a

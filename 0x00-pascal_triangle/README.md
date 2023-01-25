@@ -5,36 +5,18 @@ Pascal’s Triangle is a system of numbers arranged in rows resembling a triangl
 ![image info](./triangle.jpg)
 
 ## Pseudocode
-```
-begin
-->	declare 6 variables
-	x, y, n, a, z, s
-
-->	accept number to be calculated as limit
-->	assign values
-	s = n
-	x = 0
-	y = 0
-	z = s
-
--> 	compare x to n
-->	if x less than or equal to n
--> 		assign a = 1
-->		x++
--> 		compare z to 0
-->		if z less than or equal to n
-->			print space
-->			s--1
--> 		else
-->			s--1
--> 		compare y to x
--> 		if y less than or equal to x
-->			print a
-->			a = a * (x - y) / (y + 1)
-->			y = y + 1
-->		else
-->			print n
-->	else
-->		stop
+```python
+initialize a nested list of 1
+for the range of limit
+set a temporary list
+append a list of zero to the ends of the list
+set a temporary row list to empty
+for range of the length of result array
+append the sum of the adjacent values
+append the row to the result
+return result 
 ```	
+
+## Big O notation
+the pascal triangle has O(n^2) time complexity
 
