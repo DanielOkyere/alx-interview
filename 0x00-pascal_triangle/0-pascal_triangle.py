@@ -8,6 +8,9 @@ def pascal_triangle(n):
     """
     Returns with a list of rows for the pascal triangle
     """
+    if n <= 0:
+        return []
+
     a = [[1]]
     for i in range(n-1):
         temp = [0] + a[-1] + [0]
