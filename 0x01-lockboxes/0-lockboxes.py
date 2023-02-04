@@ -1,24 +1,33 @@
 #!/usr/bin/python3
-
-"""
-Implementation of the lockboxes
-Algorithm applies two pointers
+""" Lockboxes challenge
 """
 
 
 def canUnlockAll(boxes):
+    """Determines if all boxes can be unlocked
+    Returns:
+        True if all boxes can be opene
+        False if not
     """
-    Boxes is a list of lists
-    Boxes[0] is always open
-    """
-    new_keys = set()
-    ab = len(boxes)
-    unlockable = False
-    for i in range(ab):
-        new_keys.update(boxes[i])
-        new_keys.update(boxes[ab-1])
-        if i in new_keys:
-            unlockable = True
+    all_boxes = len(boxes)
+    unique_keys = set()
+    unlock_key = []
+    i = 0
+
+    while i < all_boxes:
+        prev = i
+        unlock_key.append(i)
+        unique_keys.update(boxes[i])
+        for key in unique_keys:
+            if key != 0 and key < all_boxes and key not in unlock_key:
+                i = key
+                break
+        if prev != i:
             continue
-        ab -= 1
-    return unlockable
+        else:
+            break
+
+    for i in range(all_boxes):
+        if i not in unlock_key and i != 0:
+            return False
+    return True
